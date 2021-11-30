@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "mods.officialy.getindustrial.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "ClientMixin"
+  ],
+  "server": [
+    "ServerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
