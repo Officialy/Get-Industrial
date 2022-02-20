@@ -7,12 +7,6 @@ import net.minecraft.world.item.Item;
 
 public class GIItems {
 
-    public static final Item genericitem = new Item(new Item.Properties().tab(GetIndustrial.TAB));
 
-
-    public static void register(){
-        Registry.register(Registry.ITEM, new ResourceLocation("getindustrial", "genericitem"), genericitem);
-
-    }
 
 }

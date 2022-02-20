@@ -2,20 +2,16 @@ package mods.officialy.getindustrial.blocks.entities.menu;
 
 import com.google.common.collect.Lists;
 import mods.officialy.getindustrial.recipe.MissileRecipe;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.List;
 
@@ -95,22 +91,18 @@ public class MissileMenu extends AbstractContainerMenu {
         this.addDataSlot(this.selectedRecipeIndex);
     }
 
-    @Environment(EnvType.CLIENT)
     public int getSelectedRecipeIndex() {
         return this.selectedRecipeIndex.get();
     }
 
-    @Environment(EnvType.CLIENT)
     public List<MissileRecipe> getRecipes() {
         return this.recipes;
     }
 
-    @Environment(EnvType.CLIENT)
     public int getNumRecipes() {
         return this.recipes.size();
     }
 
-    @Environment(EnvType.CLIENT)
     public boolean hasInputItem() {
         return this.inputSlot.hasItem() && !this.recipes.isEmpty();
     }
@@ -131,7 +123,6 @@ public class MissileMenu extends AbstractContainerMenu {
         return containerType;
     }
 
-    @Environment(EnvType.CLIENT)
     public void registerUpdateListener(Runnable p_217071_1_) {
         this.slotUpdateListener = p_217071_1_;
     }

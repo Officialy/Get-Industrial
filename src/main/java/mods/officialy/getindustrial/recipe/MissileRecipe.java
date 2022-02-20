@@ -10,7 +10,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
@@ -98,6 +98,22 @@ public class MissileRecipe implements Recipe<Inventory> {
             buffer.writeUtf(recipe.getGroup());
 
             buffer.writeItem(recipe.getResultItem());
+        }
+
+        @Override
+        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
+            return RecipeTypes.MISSILE;
+        }
+
+        @Nullable
+        @Override
+        public ResourceLocation getRegistryName() {
+            return new ResourceLocation("getindustrial", "missileassemble");
+        }
+
+        @Override
+        public Class<RecipeSerializer<?>> getRegistryType() {
+            return null;
         }
     }
 }

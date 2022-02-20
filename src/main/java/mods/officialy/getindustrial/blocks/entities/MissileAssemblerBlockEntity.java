@@ -1,8 +1,6 @@
 package mods.officialy.getindustrial.blocks.entities;
 
 import mods.officialy.getindustrial.blocks.GIBlocks;
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.client.main.Main;
 import net.minecraft.client.renderer.texture.Tickable;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -18,7 +16,7 @@ import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class MissileAssemblerBlockEntity extends BaseContainerBlockEntity implements ExtendedScreenHandlerFactory, Container, Tickable {
+public class MissileAssemblerBlockEntity extends BaseContainerBlockEntity implements Container, Tickable {
 
     public NonNullList<ItemStack> inventory;
 
@@ -88,11 +86,6 @@ public class MissileAssemblerBlockEntity extends BaseContainerBlockEntity implem
 
     @Override
     public void clearContent() {
-
-    }
-
-    @Override
-    public void writeScreenOpeningData(ServerPlayer player, FriendlyByteBuf buf) {
 
     }
 
